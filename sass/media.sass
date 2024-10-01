@@ -1,0 +1,303 @@
+@import "vars"
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+@media only screen and (max-width : 1100px)
+	header
+		.top-main-menu .button-location
+			position: relative
+		.menu-center-wrapper,
+		.right--location
+			display: none
+		.left--location
+			//top: -11px
+		.navi-hamburger
+			position: relative
+			display: flex !important
+			flex-direction: column
+			justify-content: space-between
+			//top: -20px
+			z-index: 40
+			//right: 15px
+			border-radius: 5px
+			float: right
+			height: 38px
+			width: 40px
+			cursor: pointer
+			padding: 8px
+			background-color: transparent
+			&.open
+				span
+					left: -3px
+					width: 28px
+					&.top
+						top: -1px
+					&.bottom
+						top: 1px
+				span:first-child
+					transform: rotate(45deg) translate(8.4px, 7.4px)
+				span:nth-child(2)
+					width: 0
+					opacity: 0
+				span:last-child
+					transform: rotate(-45deg) translate(7.4px, -6.4px)
+			span
+				position: relative
+				display: block
+				top: 1px
+				height: 3px
+				width: 100%
+				border-radius: 6px
+				transition: all .25s
+				background-color: $black-color
+
+
+	//for mob menu
+	.nav-mobile
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		position: fixed
+		z-index: 1500
+		width: 100%
+		height: calc(100% - 60px)
+		left: -100%
+		background-color: #fff
+		transition-property: left
+		transition-duration: .3s
+		transition-timing-function: ease-in
+		overflow: auto
+		&.open
+		  	left: 0
+		#collapse
+			ul
+				margin: 0
+				padding: 0
+				li > ul
+					display: none
+				li.first-item-menu
+					&.open
+						.link
+							i.fa-chevron-right
+								transform: rotate(90deg)
+								transition: transform .15s ease-in-out,-webkit-transform .15s ease-in-out
+				.link
+					display: flex
+					flex-direction: row
+					justify-content: space-between
+					align-items: center
+					padding: 20px 20px
+					border-bottom: 1px solid #F0F0F0
+					cursor: pointer
+					transition: .3s
+					&:hover
+						transition: .3s
+						background-color: #f5f5f5
+					span,a
+						font-family: $AdelleSansBold
+						font-weight: 700
+						width: 100%
+						display: flex
+						font-size: 14px
+						line-height: 16px
+						color: $grey-color
+					i.fa-chevron-right
+					  transition: transform .15s ease-in-out,-webkit-transform .15s ease-in-out
+					  //color: $blue-color
+					  font-size: 15px
+				.retreat
+					padding: 25px
+					&:hover
+						background-color: #fff
+				ul.submenu
+					li
+						padding: 0
+						a
+							display: flex
+							padding: 20px 40px
+							border-bottom: 1px solid #F0F0F0
+							background-color: #f5f5f5
+							font-size: 15px
+							line-height: 16px
+							color: $grey-color
+
+		.admittance
+			margin-top: 4rem
+			ul
+				margin: 0
+				padding: 0
+				li
+					list-style-type: none
+					a
+						display: flex
+						flex-direction: row
+						justify-content: center
+						align-items: center
+						padding: 20px 40px
+						font-family: $AdelleSansBold
+						font-weight: 700
+						font-size: 16px
+						line-height: 18px
+						color: $grey-color
+						background-color: #f1f5f8
+						border-top: 1px solid #fff
+						&.orange
+							color: #fff
+							background-color: $orange-color
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.main-info
+		//margin-bottom: 252px
+		.tiles .tiles-item
+			&.little
+				margin-bottom: 30px
+		.text-info h1
+			font-size: 6.3rem
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 800px)
+	.main-info
+		margin-top: 100px
+		//margin-bottom: 203px
+		&::before
+			top: -98px
+		.logo
+			padding-top: 40px
+			&::before
+				top: -130px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	html
+		font-size: 10px
+	.main-info
+		//margin-bottom: 180px
+		.tiles
+			margin-top: 40px
+			.tiles-item .body-item .content
+				padding: 20px
+		.text-info p
+			text-align: center
+			font-size: 1.5rem
+	section.about p
+		font-size: 21px
+	section.validation h2
+		.color-text
+			display: inline-block
+	/*Disable Animation on Mobile Devices*/
+	.animated
+		/*CSS transitions*/
+		-o-transition-property: none !important
+		-moz-transition-property: none !important
+		-ms-transition-property: none !important
+		-webkit-transition-property: none !important
+		transition-property: none !important
+		/*CSS transforms*/
+		-o-transform: none !important
+		-moz-transform: none !important
+		-ms-transform: none !important
+		-webkit-transform: none !important
+		transform: none !important
+		/*CSS animations*/
+		-webkit-animation: none !important
+		-moz-animation: none !important
+		-o-animation: none !important
+		-ms-animation: none !important
+		animation: none !important
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 680px)
+	html
+		font-size: 10px
+
+@media only screen and (max-width : 600px)
+	.main-info
+		//margin-bottom: 152px
+		.text-info h1
+			font-size: 5.7rem
+	footer .footer-menu
+		flex-direction: column-reverse
+		justify-content: center
+		align-items: center
+		.link-menu
+			margin-bottom: 40px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.main-info
+		//margin-bottom: 100px
+		&::before
+			top: -65px
+		.logo
+			padding-top: 55px
+			&::before
+				top: -120px
+		.tiles
+			padding-bottom: 30px
+			.tiles-item .body-item .content h2
+				font-size: 2.8rem
+		.text-info
+			h1
+				font-size: 3.6rem
+			p
+				font-size: 1.4rem
+	ul.submenu li
+		margin-bottom: 5px
+		a
+			font-size: 18px
+	section.about p
+		font-size: 18px
+	section.validation p
+		font-size: 17px
+	form#form,
+	form#form .form-wrapper
+		width: 100%
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+//@media only screen and (min-width : 480px)
+////
+
+///* Small Devices, Tablets */
+//@media only screen and (min-width : 600px)
+////
+
+///* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	.main-info .text-info h1
+		font-size: 6.3rem
+
+//
+///* Medium Devices, Desktops */
+//@media only screen and (min-width : 992px)
+////
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1100px)
+	.nav-mobile
+		display: none!important
+
+@media only screen and (min-width : 1200px)
+	/**/
+
+@media only screen and (min-width : 1400px)
+	.main-info::before,
+	.main-info::after
+		background-size: cover
+	//.main-info::after
+	//	height: 350px
+
